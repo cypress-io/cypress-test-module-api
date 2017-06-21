@@ -7,3 +7,4 @@ test:
     - npm install cypress@$CYPRESS_TAG
     - $(npm bin)/cypress verify
     - node index.js
+    - node async.js

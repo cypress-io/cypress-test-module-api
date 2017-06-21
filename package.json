@@ -11,7 +11,8 @@
     "url": "git+https://github.com/cypress-io/cypress-example-module-api.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gleb Bahmutov <gleb@cypress.io>",
+  "private": true,
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cypress-io/cypress-example-module-api/issues"
