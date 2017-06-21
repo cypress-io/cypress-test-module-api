@@ -1,0 +1,20 @@
+{
+  "name": "cypress-example-module-api",
+  "version": "1.0.0",
+  "description": "Example running specs using Cypress via its module API",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypress-io/cypress-example-module-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cypress-io/cypress-example-module-api/issues"
+  },
+  "homepage": "https://github.com/cypress-io/cypress-example-module-api#readme"
+}

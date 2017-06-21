@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 8
+
+test:
+  override:
+    - npm install cypress@$CYPRESS_TAG
+    - $(npm bin)/cypress verify
+    - node index.js
