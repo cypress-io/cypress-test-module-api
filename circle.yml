@@ -8,3 +8,4 @@ test:
     - $(npm bin)/cypress verify
     - node index.js
     - node async.js
+    - npm test

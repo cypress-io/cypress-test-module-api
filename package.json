@@ -4,7 +4,9 @@
   "description": "Example running specs using Cypress via its module API",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "pretest": "npm run lint",
+    "test": "mocha --timeout 20000 test/spec.js",
+    "lint": "standard --verbose --fix test/*.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/cypress-io/cypress-example-module-api/issues"
   },
-  "homepage": "https://github.com/cypress-io/cypress-example-module-api#readme"
+  "homepage": "https://github.com/cypress-io/cypress-example-module-api#readme",
+  "devDependencies": {
+    "chdir-promise": "^0.4.0",
+    "mocha": "^3.4.2",
+    "standard": "^10.0.2"
+  },
+  "standard": {
+    "globals": ["describe", "beforeEach", "it", "afterEach"]
+  }
 }
