@@ -1,3 +1,5 @@
 node_modules/
 cypress/videos/
 test/successful/cypress/videos/
+.DS_Store
+test/invalid/cypress/videos

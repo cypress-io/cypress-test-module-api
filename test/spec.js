@@ -14,3 +14,16 @@ describe('successful tests', () => {
     snapshot(cypress.run())
   )
 })
+
+// https://github.com/cypress-io/cypress-test-module-api/issues/3
+describe.skip('invalid malformed spec file', () => {
+  beforeEach(() => {
+    chdir.to(fromFolder('invalid'))
+  })
+
+  afterEach(chdir.back)
+
+  it('returns with error code', () =>
+    snapshot(cypress.run())
+  )
+})
