@@ -15,6 +15,18 @@ describe('successful tests', () => {
   )
 })
 
+describe('failing test', () => {
+  beforeEach(() => {
+    chdir.to(fromFolder('failing'))
+  })
+
+  afterEach(chdir.back)
+
+  it('returns correct number of failing tests', () =>
+    snapshot(cypress.run())
+  )
+})
+
 // https://github.com/cypress-io/cypress-test-module-api/issues/3
 describe.skip('invalid malformed spec file', () => {
   beforeEach(() => {
