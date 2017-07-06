@@ -1,6 +1,7 @@
 const cypress = require('cypress')
 const chdir = require('chdir-promise')
 const fromFolder = require('path').join.bind(null, __dirname)
+const snapshot = require('snap-shot')
 
 describe('successful tests', () => {
   beforeEach(() => {
@@ -9,8 +10,7 @@ describe('successful tests', () => {
 
   afterEach(chdir.back)
 
-  it.skip('returns with all successful tests', () =>
-    // TODO verify resolved value
-    cypress.run().then(console.log)
+  it('returns with all successful tests', () =>
+    snapshot(cypress.run())
   )
 })

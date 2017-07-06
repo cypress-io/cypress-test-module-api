@@ -23,9 +23,15 @@
   "devDependencies": {
     "chdir-promise": "^0.4.0",
     "mocha": "^3.4.2",
+    "snap-shot": "^2.17.0",
     "standard": "^10.0.2"
   },
   "standard": {
-    "globals": ["describe", "beforeEach", "it", "afterEach"]
+    "globals": [
+      "describe",
+      "beforeEach",
+      "it",
+      "afterEach"
+    ]
   }
 }
