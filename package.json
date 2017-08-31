@@ -22,8 +22,10 @@
   "homepage": "https://github.com/cypress-io/cypress-example-module-api#readme",
   "devDependencies": {
     "chdir-promise": "^0.4.0",
+    "check-more-types": "^2.24.0",
+    "lazy-ass": "^1.6.0",
     "mocha": "^3.4.2",
-    "snap-shot": "^2.17.0",
+    "snap-shot-it": "^2.2.0",
     "standard": "^10.0.2"
   },
   "standard": {

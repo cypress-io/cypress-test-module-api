@@ -1,7 +1,15 @@
 const cypress = require('cypress')
 const chdir = require('chdir-promise')
 const fromFolder = require('path').join.bind(null, __dirname)
-const snapshot = require('snap-shot')
+const snapshot = require('snap-shot-it')
+const la = require('lazy-ass')
+const is = require('check-more-types')
+
+const normalize = output => {
+  la(is.unemptyString(output.version), 'has version', output)
+  output.version = '0.0.0'
+  return output
+}
 
 describe('successful tests', () => {
   beforeEach(() => {
@@ -11,7 +19,7 @@ describe('successful tests', () => {
   afterEach(chdir.back)
 
   it('returns with all successful tests', () =>
-    snapshot(cypress.run())
+    cypress.run().then(normalize).then(snapshot)
   )
 })
 
@@ -23,7 +31,7 @@ describe('failing test', () => {
   afterEach(chdir.back)
 
   it('returns correct number of failing tests', () =>
-    snapshot(cypress.run())
+    cypress.run().then(normalize).then(snapshot)
   )
 })
 
@@ -36,6 +44,6 @@ describe.skip('invalid malformed spec file', () => {
   afterEach(chdir.back)
 
   it('returns with error code', () =>
-    snapshot(cypress.run())
+    cypress.run().then(normalize).then(snapshot)
   )
 })

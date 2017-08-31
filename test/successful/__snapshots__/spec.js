@@ -1,4 +1,4 @@
-exports['returns with all successful tests 1'] = {
+exports['successful tests returns with all successful tests 1'] = {
   "tests": 2,
   "passes": 2,
   "pending": 0,
