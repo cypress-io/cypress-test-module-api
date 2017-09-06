@@ -36,7 +36,7 @@ describe('failing test', () => {
 })
 
 // https://github.com/cypress-io/cypress-test-module-api/issues/3
-describe.skip('invalid malformed spec file', () => {
+describe('invalid malformed spec file', () => {
   beforeEach(() => {
     chdir.to(fromFolder('invalid'))
   })
@@ -44,6 +44,9 @@ describe.skip('invalid malformed spec file', () => {
   afterEach(chdir.back)
 
   it('returns with error code', () =>
-    cypress.run().then(normalize).then(snapshot)
+    // test has reference error on load
+    cypress.run({
+      spec: './cypress/integration/a-spec.js'
+    }).then(normalize).then(snapshot)
   )
 })
