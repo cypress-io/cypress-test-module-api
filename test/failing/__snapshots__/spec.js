@@ -3,7 +3,7 @@ exports['failing test returns correct number of failing tests 1'] = {
   "passes": 1,
   "pending": 0,
   "failures": 1,
-  "duration": "0 seconds",
+  "duration": "X seconds",
   "screenshots": 1,
   "video": true,
   "version": "0.0.0"

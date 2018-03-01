@@ -7,7 +7,9 @@ const is = require('check-more-types')
 
 const normalize = output => {
   la(is.unemptyString(output.version), 'has version', output)
+  la(is.unemptyString(output.duration), 'has duration', output)
   output.version = '0.0.0'
+  output.duration = 'X seconds'
   return output
 }
 
