@@ -1,3 +1,5 @@
+require('mocha-banner').register()
+
 const cypress = require('cypress')
 const chdir = require('chdir-promise')
 const fromFolder = require('path').join.bind(null, __dirname)
@@ -22,7 +24,7 @@ describe('successful tests', () => {
 
   afterEach(chdir.back)
 
-  it.only('returns with all successful tests', () =>
+  it('returns with all successful tests', () =>
     cypress.run()
       .then(R.tap(debug))
       .then(normalize)
