@@ -41,6 +41,6 @@
     ]
   },
   "dependencies": {
-    "cypress": "2.1.0"
+    "cypress": "https://cdn.cypress.io/beta/npm/3.0.0/buildkite-develop-b7756cff3f145b704057d7737ce27da6c1a82f00-811/cypress.tgz"
   }
 }
