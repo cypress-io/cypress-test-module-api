@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - $(npm bin)/commit-message-install
+    - $(npm bin)/commit-message-install --else "npm i cypress"
     - $(npm bin)/cypress verify
     - node index.js
     - node async.js

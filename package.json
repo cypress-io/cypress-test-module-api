@@ -21,13 +21,13 @@
   },
   "homepage": "https://github.com/cypress-io/cypress-example-module-api#readme",
   "devDependencies": {
-    "chdir-promise": "^0.4.0",
-    "check-more-types": "^2.24.0",
-    "commit-message-install": "^1.4.0",
-    "lazy-ass": "^1.6.0",
+    "chdir-promise": "0.6.2",
+    "check-more-types": "2.24.0",
+    "commit-message-install": "1.10.1",
+    "lazy-ass": "1.6.0",
     "mocha": "^3.4.2",
-    "snap-shot-it": "^3.3.0",
-    "standard": "^10.0.2"
+    "snap-shot-it": "5.0.0",
+    "standard": "11.0.1"
   },
   "standard": {
     "globals": [
