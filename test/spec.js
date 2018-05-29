@@ -4,6 +4,8 @@ const fromFolder = require('path').join.bind(null, __dirname)
 const snapshot = require('snap-shot-it')
 const la = require('lazy-ass')
 const is = require('check-more-types')
+const debug = require('debug')('test')
+const R = require('ramda')
 
 const normalize = output => {
   la(is.unemptyString(output.version), 'has version', output)
@@ -20,8 +22,11 @@ describe('successful tests', () => {
 
   afterEach(chdir.back)
 
-  it('returns with all successful tests', () =>
-    cypress.run().then(normalize).then(snapshot)
+  it.only('returns with all successful tests', () =>
+    cypress.run()
+      .then(R.tap(debug))
+      .then(normalize)
+      .then(snapshot)
   )
 })
 
@@ -33,7 +38,9 @@ describe('failing test', () => {
   afterEach(chdir.back)
 
   it('returns correct number of failing tests', () =>
-    cypress.run().then(normalize).then(snapshot)
+    cypress.run()
+      .then(normalize)
+      .then(snapshot)
   )
 })
 
