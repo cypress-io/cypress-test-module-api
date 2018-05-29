@@ -86,8 +86,8 @@ describe('invalid malformed spec file', () => {
     cypress.run({
       spec: './cypress/integration/a-spec.js'
     })
-    .then(normalize)
-    .then(pickImportant)
-    .then(snapshot)
+      .then(normalize)
+      .then(pickImportant)
+      .then(snapshot)
   )
 })
