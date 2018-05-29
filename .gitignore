@@ -5,3 +5,4 @@ test/successful/cypress/videos/
 test/invalid/cypress/videos
 test/failing/cypress/videos
 test/failing/cypress/screenshots
+test/invalid/cypress/screenshots
