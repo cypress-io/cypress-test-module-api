@@ -1,10 +1,15 @@
 exports['invalid malformed spec file returns with error code 1'] = {
-  "tests": 1,
-  "passes": 0,
-  "pending": 0,
-  "failures": 1,
-  "duration": "X seconds",
-  "screenshots": 1,
-  "video": true,
-  "version": "0.0.0"
+  "cypressVersion": "0.0.0",
+  "totalDuration": "X seconds",
+  "totalSuites": 0,
+  "totalTests": 1,
+  "totalFailed": 1,
+  "totalPassed": 0,
+  "totalPending": 0,
+  "totalSkipped": 0,
+  "browserName": "electron",
+  "browserVersion": "1.2.3",
+  "osName": "darwin",
+  "osVersion": "16.7.0"
 }
+

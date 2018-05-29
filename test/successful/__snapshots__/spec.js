@@ -1,11 +1,15 @@
 exports['successful tests returns with all successful tests 1'] = {
-  "tests": 2,
-  "passes": 2,
-  "pending": 0,
-  "failures": 0,
-  "duration": "X seconds",
-  "screenshots": 0,
-  "video": true,
-  "version": "0.0.0"
+  "cypressVersion": "0.0.0",
+  "totalDuration": "X seconds",
+  "totalSuites": 2,
+  "totalTests": 2,
+  "totalFailed": 0,
+  "totalPassed": 2,
+  "totalPending": 0,
+  "totalSkipped": 0,
+  "browserName": "electron",
+  "browserVersion": "1.2.3",
+  "osName": "darwin",
+  "osVersion": "16.7.0"
 }
 

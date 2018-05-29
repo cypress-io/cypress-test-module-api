@@ -1,15 +1,44 @@
+require('mocha-banner').register()
+
 const cypress = require('cypress')
 const chdir = require('chdir-promise')
 const fromFolder = require('path').join.bind(null, __dirname)
 const snapshot = require('snap-shot-it')
 const la = require('lazy-ass')
 const is = require('check-more-types')
+const debug = require('debug')('test')
+const R = require('ramda')
+
+const importantProperties = [
+  'cypressVersion',
+  'totalDuration',
+  'totalSuites',
+  'totalTests',
+  'totalFailed',
+  'totalPassed',
+  'totalPending',
+  'totalSkipped',
+  'browserName',
+  'browserVersion',
+  'osName',
+  'osVersion'
+]
+
+const pickImportant = R.pick(importantProperties)
 
 const normalize = output => {
-  la(is.unemptyString(output.version), 'has version', output)
-  la(is.unemptyString(output.duration), 'has duration', output)
-  output.version = '0.0.0'
-  output.duration = 'X seconds'
+  la(is.unemptyString(output.cypressVersion), 'has Cypress version', output)
+  la(is.positive(output.totalDuration), 'has duration', output)
+  la(is.unemptyString(output.browserVersion), 'has browserVersion', output)
+  la(is.unemptyString(output.osName), 'has osName', output)
+  la(is.unemptyString(output.osVersion), 'has osVersion', output)
+
+  output.cypressVersion = '0.0.0'
+  output.totalDuration = 'X seconds'
+  output.browserVersion = '1.2.3'
+  output.osName = 'darwin'
+  output.osVersion = '16.7.0'
+
   return output
 }
 
@@ -21,7 +50,11 @@ describe('successful tests', () => {
   afterEach(chdir.back)
 
   it('returns with all successful tests', () =>
-    cypress.run().then(normalize).then(snapshot)
+    cypress.run()
+      .then(R.tap(debug))
+      .then(normalize)
+      .then(pickImportant)
+      .then(snapshot)
   )
 })
 
@@ -33,7 +66,10 @@ describe('failing test', () => {
   afterEach(chdir.back)
 
   it('returns correct number of failing tests', () =>
-    cypress.run().then(normalize).then(snapshot)
+    cypress.run()
+      .then(normalize)
+      .then(pickImportant)
+      .then(snapshot)
   )
 })
 
@@ -49,6 +85,9 @@ describe('invalid malformed spec file', () => {
     // test has reference error on load
     cypress.run({
       spec: './cypress/integration/a-spec.js'
-    }).then(normalize).then(snapshot)
+    })
+      .then(normalize)
+      .then(pickImportant)
+      .then(snapshot)
   )
 })
