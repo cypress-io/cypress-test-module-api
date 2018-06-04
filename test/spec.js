@@ -2,7 +2,8 @@ require('mocha-banner').register()
 
 const cypress = require('cypress')
 const chdir = require('chdir-promise')
-const fromFolder = require('path').join.bind(null, __dirname)
+const join = require('path').join
+const fromFolder = join.bind(null, __dirname)
 const snapshot = require('snap-shot-it')
 const la = require('lazy-ass')
 const is = require('check-more-types')
@@ -43,8 +44,10 @@ const normalize = output => {
 }
 
 describe('successful tests', () => {
+  const projectFolder = fromFolder('successful')
+
   beforeEach(() => {
-    chdir.to(fromFolder('successful'))
+    chdir.to(projectFolder)
   })
 
   afterEach(chdir.back)
@@ -56,6 +59,27 @@ describe('successful tests', () => {
       .then(pickImportant)
       .then(snapshot)
   )
+
+  it('runs specific spec', () => {
+    return cypress.run({
+      spec: 'cypress/integration/a-spec.js'
+    }).then(R.tap(debug))
+      .then((result) => {
+        la(result.totalTests === 1, 'there should be single test', result.totalTests)
+      })
+  })
+
+  it('runs specific spec using absolute path', () => {
+    const absoluteSpec = join(projectFolder, 'cypress/integration/a-spec.js')
+    debug('absolute path to the spec: %s', absoluteSpec)
+
+    return cypress.run({
+      spec: absoluteSpec
+    }).then(R.tap(debug))
+      .then((result) => {
+        la(result.totalTests === 1, 'there should be single test', result.totalTests)
+      })
+  })
 })
 
 describe('failing test', () => {
