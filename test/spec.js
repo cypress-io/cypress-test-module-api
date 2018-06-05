@@ -80,6 +80,24 @@ describe('successful tests', () => {
         la(result.totalTests === 1, 'there should be single test', result.totalTests)
       })
   })
+
+  it('runs a single spec using wildcard', () => {
+    return cypress.run({
+      spec: 'cypress/integration/a-*.js'
+    }).then(R.tap(debug))
+      .then((result) => {
+        la(result.totalTests === 1, 'there should be single test', result.totalTests)
+      })
+  })
+
+  it('runs both found specs using wildcard', () => {
+    return cypress.run({
+      spec: 'cypress/integration/a-*.js,cypress/integration/b-*.js'
+    }).then(R.tap(debug))
+      .then((result) => {
+        la(result.totalTests === 2, 'found both tests', result.totalTests)
+      })
+  })
 })
 
 describe('failing test', () => {
