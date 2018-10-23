@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/cypress-io/cypress-example-module-api.git"
   },
-  "keywords": [],
+  "keywords": ["cypress", "cypress-io", "cypress-test"],
   "author": "Gleb Bahmutov <gleb@cypress.io>",
   "private": true,
   "license": "ISC",

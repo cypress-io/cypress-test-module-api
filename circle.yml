@@ -9,15 +9,17 @@ jobs:
           keys:
             - cache-{{ checksum "package.json" }}
       - run: npm ci
-      - run:
-          name: Install Cypress
-          command: $(npm bin)/commit-message-install --else "npm i cypress"
-      - run: npm run cy:verify
       - save_cache:
           key: cache-{{ checksum "package.json" }}
           paths:
             - ~/.npm
             - ~/.cache
+      # now install just a specific version of Cypress (from commit message)
+      # or latest version of Cypress
+      - run:
+          name: Install Cypress
+          command: $(npm bin)/commit-message-install --else "npm i cypress"
+      - run: npm run cy:verify
       - run: node index.js
       - run: node async.js
       - run: npm test
