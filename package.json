@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "mocha --timeout 20000 test/spec.js",
-    "lint": "standard --verbose --fix test/*.js"
+    "lint": "standard --verbose --fix test/*.js",
+    "cy:verify": "cypress verify"
   },
   "repository": {
     "type": "git",
