@@ -8,8 +8,9 @@ jobs:
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
+      - run: npm ci
       - run:
-          name: Install dependencies
+          name: Install Cypress
           command: $(npm bin)/commit-message-install --else "npm i cypress"
       - run: npm run cy:verify
       - save_cache:
