@@ -6,13 +6,18 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "mocha --timeout 20000 test/spec.js",
-    "lint": "standard --verbose --fix test/*.js"
+    "lint": "standard --verbose --fix test/*.js",
+    "cy:verify": "cypress verify"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cypress-io/cypress-example-module-api.git"
   },
-  "keywords": [],
+  "keywords": [
+    "cypress",
+    "cypress-io",
+    "cypress-test"
+  ],
   "author": "Gleb Bahmutov <gleb@cypress.io>",
   "private": true,
   "license": "ISC",
@@ -21,6 +26,7 @@
   },
   "homepage": "https://github.com/cypress-io/cypress-example-module-api#readme",
   "devDependencies": {
+    "@bahmutov/all-paths": "1.0.2",
     "chdir-promise": "0.6.2",
     "check-more-types": "2.24.0",
     "commit-message-install": "1.10.1",
@@ -30,7 +36,8 @@
     "mocha-banner": "1.1.2",
     "ramda": "0.25.0",
     "snap-shot-it": "5.0.1",
-    "standard": "11.0.1"
+    "standard": "11.0.1",
+    "terminal-banner": "1.1.0"
   },
   "standard": {
     "globals": [
