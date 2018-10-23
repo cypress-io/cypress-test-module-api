@@ -7,7 +7,9 @@ const onSuccess = (runResult) => {
   banner('Cypresss results')
   console.log('%o', runResult)
   banner('Results paths')
-  allPaths(runResult)
+  // TODO find a better way to show all available properties in the runResult object
+  // maybe a tree representation in the terminal?
+  console.log(allPaths(runResult).join('\n'))
 }
 
 cypress.run({
