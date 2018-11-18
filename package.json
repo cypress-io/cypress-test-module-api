@@ -34,7 +34,7 @@
     "lazy-ass": "1.6.0",
     "mocha": "5.2.0",
     "mocha-banner": "1.1.2",
-    "ramda": "0.25.0",
+    "ramda": "0.26.0",
     "snap-shot-it": "5.0.1",
     "standard": "11.0.1",
     "terminal-banner": "1.1.0"
