@@ -100,6 +100,28 @@ describe('successful tests', () => {
   })
 })
 
+describe('env variables', () => {
+  const projectFolder = fromFolder('env')
+
+  beforeEach(() => {
+    chdir.to(projectFolder)
+  })
+
+  afterEach(chdir.back)
+
+  it('passes environment variables in the object', () => {
+    return cypress.run({
+      spec: 'cypress/integration/env-spec.js',
+      env: {
+        foo: {
+          bar: 'baz'
+        },
+        another: 42
+      }
+    })
+  })
+})
+
 describe('failing test', () => {
   beforeEach(() => {
     chdir.to(fromFolder('failing'))
