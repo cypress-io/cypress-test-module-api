@@ -32,7 +32,7 @@
     "commit-message-install": "1.10.1",
     "debug": "4.1.1",
     "lazy-ass": "1.6.0",
-    "mocha": "6.0.2",
+    "mocha": "6.1.0",
     "mocha-banner": "1.1.2",
     "ramda": "0.26.1",
     "snap-shot-it": "5.0.1",
