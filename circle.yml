@@ -23,6 +23,7 @@ jobs:
       - run: node index.js
       - run: node async.js
       - run: npm test
+      # set commit status if necessary
       - run:
           when: on_success
           name: Set status check
@@ -31,7 +32,6 @@ jobs:
           when: on_fail
           name: Set status check
           command: $(npm bin)/set-status --state failure --description "on CircleCI"
-
 
 workflows:
   version: 2
