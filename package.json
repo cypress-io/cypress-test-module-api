@@ -35,7 +35,7 @@
     "mocha-banner": "1.1.2",
     "ramda": "0.27.0",
     "snap-shot-it": "5.0.1",
-    "standard": "14.3.3",
+    "standard": "14.3.4",
     "terminal-banner": "1.1.0"
   },
   "standard": {
