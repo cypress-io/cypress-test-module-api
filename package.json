@@ -29,7 +29,7 @@
     "@bahmutov/all-paths": "1.0.2",
     "chdir-promise": "0.6.2",
     "check-more-types": "2.24.0",
-    "debug": "4.3.1",
+    "debug": "4.3.2",
     "lazy-ass": "1.6.0",
     "mocha": "6.2.3",
     "mocha-banner": "1.1.2",
