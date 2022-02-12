@@ -33,7 +33,7 @@
     "lazy-ass": "1.6.0",
     "mocha": "9.2.0",
     "mocha-banner": "1.1.2",
-    "ramda": "0.27.1",
+    "ramda": "0.28.0",
     "snap-shot-it": "5.0.1",
     "standard": "16.0.4",
     "terminal-banner": "1.1.0"
